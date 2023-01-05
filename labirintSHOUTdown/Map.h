@@ -1,4 +1,11 @@
 #pragma once
+/* #-wall stena
+* @-hero geroy
+* |-movable wall is bullet proof
+* t-tnt vzrivchatcka
+* b-bots
+* +-armed veichl
+*/
 #include<string>
 #include<SFML/Graphics/Drawable.hpp>
 class Map :public sf::Drawable
