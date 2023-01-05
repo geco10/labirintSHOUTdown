@@ -3,8 +3,8 @@
 Map::Map(const char* path, sf::Vector2f size){
 	download(path);
 	len = size.x/n;
-	
-
+}
+void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
 			if (map[i][j] == '#') {
@@ -13,9 +13,6 @@ Map::Map(const char* path, sf::Vector2f size){
 		}
 	}
 }
-//void Map:: draw(sf::RenderTarget& target, sf::RenderStates states) {
-	
-//}
 void Map::download(const char* path)
 {
 	FILE* file;
