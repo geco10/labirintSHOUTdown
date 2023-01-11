@@ -1,14 +1,21 @@
+#pragma warning(disable:4996)
 #include "Map.h"
-
+#include<SFML/Graphics.hpp>
 Map::Map(const char* path, sf::Vector2f size){
 	download(path);
-	len = size.x/n;
+	float ky = size.y / n;
+	float kx = size.x / m;
+	if (ky > kx)len = kx;
+	else len = ky;
 }
 void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			if (map[i][j] == '#') {
-				
+	for (int y = 0; y < n; y++) {
+		for (int x = 0; x < m; x++) {
+			if (map[y][x] == '#') {
+				sf::RectangleShape wall(sf::Vector2f(len,len));
+				wall.setFillColor(sf::Color(8, 0, 255));
+				wall.setPosition(sf::Vector2f(x*len,y*len));
+				target.draw(wall);
 			}
 		}
 	}
@@ -20,7 +27,8 @@ void Map::download(const char* path)
 	if (file==NULL) {
 		throw - 13;
 	}
-	while (fgets(map[n++], 500, file) != NULL);
-	strlen(map[0]);
+	while (fgets(map[n++], 500, file) != NULL)puts(map[n-1]);
+	--n;
+	m=strlen(map[0])-1;
 	fclose(file);
 }

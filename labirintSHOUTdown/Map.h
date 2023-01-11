@@ -10,12 +10,12 @@
 #include<SFML/Graphics/Drawable.hpp>
 class Map :public sf::Drawable
 {
-	int len;
+	float len;
 	char map[500][500];
-	size_t n, m;
+	size_t n=0, m=0;
 public:
 	Map(const char* path,sf::Vector2f size);
-	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void download(const char* path);
 };
 

@@ -1,8 +1,10 @@
 #include <SFML/Graphics.hpp>
-
+#include"Map.h"
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "Lesson 2. kychka-pc.ru");
+	sf::Vector2f size(900, 900);
+	Map map("./Maps/Test_Map.txt", size);
+	sf::RenderWindow window(sf::VideoMode(size.x,size.y), "Lesson 2. kychka-pc.ru");
 	sf::CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Red);
 
@@ -16,7 +18,7 @@ int main()
 		}
 
 		window.clear();
-		window.draw(shape);
+		window.draw(map);
 		window.display();
 	}
 
