@@ -135,6 +135,7 @@
     <ClCompile Include="Shotgun.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="enumHero.h" />
     <ClInclude Include="Enum_gun_type.h" />
     <ClInclude Include="Gun.h" />
     <ClInclude Include="Hero.h" />

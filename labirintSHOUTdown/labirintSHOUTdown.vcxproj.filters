@@ -53,5 +53,8 @@
     <ClInclude Include="Pistol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="enumHero.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

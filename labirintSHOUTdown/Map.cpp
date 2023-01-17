@@ -1,6 +1,10 @@
 #pragma warning(disable:4996)
 #include "Map.h"
 #include<SFML/Graphics.hpp>
+int Map::getLen()const
+{
+	return len;
+}
 Map::Map(const char* path, sf::Vector2f size){
 	download(path);
 	float ky = size.y / n;
@@ -16,6 +20,10 @@ void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
 				wall.setFillColor(sf::Color(8, 0, 255));
 				wall.setPosition(sf::Vector2f(x*len,y*len));
 				target.draw(wall);
+			}
+			if (map[y][x] == @) {
+				
+				
 			}
 		}
 	}

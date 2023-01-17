@@ -1,5 +1,5 @@
 #pragma once
-class Pistol
-{
+#include"Gun.h"
+class Pistol :public Gun{
 };
 
