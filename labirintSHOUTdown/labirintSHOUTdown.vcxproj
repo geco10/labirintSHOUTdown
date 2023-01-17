@@ -131,12 +131,16 @@
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="labirintSHOUTdown.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Pistol.cpp" />
+    <ClCompile Include="Shotgun.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enum_gun_type.h" />
     <ClInclude Include="Gun.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Pistol.h" />
+    <ClInclude Include="Shotgun.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
