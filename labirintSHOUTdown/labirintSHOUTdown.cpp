@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include"Map.h"
+#include"Hero.h"
 int main()
 {
 	sf::Vector2f size(900, 900);
