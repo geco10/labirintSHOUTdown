@@ -12,8 +12,10 @@ class Hero{
 	sf::Color color;
 	Gun* gun;
 	Map* map;
+public:
 	Hero();
 	void shoot();
+	void setColor(sf::Color c);
 	void reload();
 	void kick();
 	void setMap(Map* map);

@@ -1,5 +1,10 @@
 #include "Hero.h"
 
+void Hero::setColor(sf::Color c)
+{
+	color = c;
+}
+
 void Hero::setMap(Map* map){
 	this->map = map;
 }
@@ -18,9 +23,9 @@ void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 		target.draw(triangle);
 	}
 	if (type == ShapeType::Square) {
-		sf::RectangleShape square(sf::Vector2f(len));
+		/*sf::RectangleShape square(sf::Vector2f(len));
 		square.setPosition(sf::Vector2f(pos.x * map->getLen(), pos.y * map->getLen()));
 		square.setFillColor(color);
-		target.draw(square);
+		target.draw(square);*/
 	}
 }
