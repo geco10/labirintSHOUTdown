@@ -3,7 +3,7 @@
 #include "Map.h"
 #include<SFML/Graphics.hpp>
 #include"enumHero.h"
-class Hero{
+class Hero :public sf::Drawable{
 	int live = 100;
 	float dir;
 	sf::Vector2f pos;

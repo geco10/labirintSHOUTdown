@@ -16,13 +16,13 @@ void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
 	for (int y = 0; y < n; y++) {
 		for (int x = 0; x < m; x++) {
 			if (map[y][x] == '#') {
-				sf::RectangleShape wall(sf::Vector2f(len,len));
+				sf::RectangleShape wall(sf::Vector2f(len, len));
 				wall.setFillColor(sf::Color(255, 255, 240));
-				wall.setPosition(sf::Vector2f(x*len,y*len));
+				wall.setPosition(sf::Vector2f(x * len, y * len));
 				target.draw(wall);
 			}
 			if (map[y][x] == '@') {
-				
+
 			}
 			if (map[y][x] == '|') {
 				/*sf::RectangleShape door(sf::Vector2f(len,4/len));
@@ -30,7 +30,7 @@ void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
 				door.setPosition(map[]);
 				if(map[y][x+1]=='#')*/
 			}
-
+		}
 	}
 }
 void Map::download(const char* path)
