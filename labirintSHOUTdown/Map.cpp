@@ -1,7 +1,7 @@
 #pragma warning(disable:4996)
 #include "Map.h"
 #include<SFML/Graphics.hpp>
-int Map::getLen()const
+float Map::getLen()const
 {
 	return len;
 }
@@ -25,10 +25,12 @@ void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
 				
 			}
 			if (map[y][x] == '|') {
-				sf::RectangleShape door(sf::Vector2f(len,4/len));
+				/*sf::RectangleShape door(sf::Vector2f(len,4/len));
 				door.setPosition(sf::Vector2f(x * len,y * len));
-				if()
+				door.setPosition(map[]);
+				if(map[y][x+1]=='#')*/
 			}
+
 	}
 }
 void Map::download(const char* path)

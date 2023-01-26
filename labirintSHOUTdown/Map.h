@@ -14,7 +14,7 @@ class Map :public sf::Drawable
 	char map[500][500];
 	size_t n=0, m=0;
 public:
-	int getLen()const;
+	float getLen()const;
 	Map(const char* path,sf::Vector2f size);
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void download(const char* path);
