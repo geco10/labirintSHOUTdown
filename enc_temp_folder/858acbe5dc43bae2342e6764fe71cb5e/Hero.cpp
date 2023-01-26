@@ -17,10 +17,4 @@ void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 		triangle.setFillColor(color);
 		target.draw(triangle);
 	}
-	if (type == ShapeType::Square) {
-		sf::CircleShape square(map->getLen(), 3);
-		square.setPosition(sf::Vector2f(pos.x * map->getLen(), pos.y * map->getLen()));
-		square.setFillColor(color);
-		target.draw(square);
-	}
 }
