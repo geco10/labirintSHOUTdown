@@ -5,12 +5,26 @@ float Map::getLen()const
 {
 	return len;
 }
+sf::Vector2f Map::getSize()
+{
+	return sf::Vector2f(m,n);
+}
 Map::Map(const char* path, sf::Vector2f size){
 	download(path);
 	float ky = size.y / n;
 	float kx = size.x / m;
 	if (ky > kx)len = kx;
 	else len = ky;
+}
+void Map::findSpawns() {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++){
+			if(map[i][j] == '@'){
+				spawns.push_back(sf::Vector2f(i,j));
+			}
+			map[i][j] = ' ';
+		}
+	}
 }
 void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
 	for (int y = 0; y < n; y++) {
@@ -44,4 +58,5 @@ void Map::download(const char* path)
 	--n;
 	m=strlen(map[0])-1;
 	fclose(file);
+
 }

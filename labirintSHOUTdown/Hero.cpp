@@ -1,5 +1,14 @@
 #include "Hero.h"
 
+Hero::Hero() {
+	dir = UP;
+	for (int i = 0; i < map->getSize().y; i++){
+		for (int j = 0; j < map->getSize().x; j++){
+			if()
+		}
+	}
+}
+
 void Hero::setColor(sf::Color c)
 {
 	color = c;

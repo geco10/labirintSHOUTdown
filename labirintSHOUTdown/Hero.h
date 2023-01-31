@@ -3,6 +3,12 @@
 #include "Map.h"
 #include<SFML/Graphics.hpp>
 #include"enumHero.h"
+enum {
+   UP,
+   LEFT,
+   DOWN,
+   RIGHT
+};
 class Hero :public sf::Drawable{
 	int live = 100;
 	float dir;
@@ -13,12 +19,12 @@ class Hero :public sf::Drawable{
 	Gun* gun;
 	Map* map;
 public:
+	void setMap(Map* map);
 	Hero();
 	void shoot();
 	void setColor(sf::Color c);
 	void reload();
 	void kick();
-	void setMap(Map* map);
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;
 	void move();
 };
