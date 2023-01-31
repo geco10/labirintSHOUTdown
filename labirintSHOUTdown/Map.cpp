@@ -47,6 +47,9 @@ void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
 		}
 	}
 }
+const std::vector<sf::Vector2f>& Map::getSpawns() {
+	return spawns;
+}
 void Map::download(const char* path)
 {
 	FILE* file;

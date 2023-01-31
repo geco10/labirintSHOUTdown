@@ -1,12 +1,9 @@
 #include "Hero.h"
 
-Hero::Hero() {
+Hero::Hero(int d) {
 	dir = UP;
-	for (int i = 0; i < map->getSize().y; i++){
-		for (int j = 0; j < map->getSize().x; j++){
-			if()
-		}
-	}
+	id = d;
+	pos = map->getSpawns()[id];
 }
 
 void Hero::setColor(sf::Color c)

@@ -12,6 +12,7 @@ enum {
 class Hero :public sf::Drawable{
 	int live = 100;
 	float dir;
+	int id;
 	sf::Vector2f pos;
 	ShapeType type;
 	int kD;
@@ -20,7 +21,7 @@ class Hero :public sf::Drawable{
 	Map* map;
 public:
 	void setMap(Map* map);
-	Hero();
+	Hero(int d);
 	void shoot();
 	void setColor(sf::Color c);
 	void reload();

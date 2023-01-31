@@ -17,7 +17,7 @@ class Map :public sf::Drawable
 	void download(const char* path);
 	void findSpawns();
 public:
-	std::vector<sf::Vector2f> getSpawns();
+	const std::vector<sf::Vector2f>& getSpawns();
 	float getLen()const;
 	sf::Vector2f getSize();
 	Map(const char* path,sf::Vector2f size);
