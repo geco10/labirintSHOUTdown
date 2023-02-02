@@ -10,7 +10,7 @@ enum {
    RIGHT
 };
 class Hero :public sf::Drawable{
-	int live = 100;//zizny
+	int live;//zizny
 	float dir;//napravlenya
 	int id;//porydkovi nomer
 	sf::Vector2f pos;//positia

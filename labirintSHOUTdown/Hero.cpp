@@ -1,13 +1,24 @@
 #include "Hero.h"
+#pragma warning(disable:4996)
 
 Hero::Hero(int d,Map* map,const char* path) {
-	
+	download(path);
 	dir = UP;
 	id = d;
 	this->map = map;
 	pos = map->getSpawns()[id];
 }
-
+void Hero::download(const char* path){
+	FILE* file;
+	file=fopen(path,"r");
+	if (file == NULL) {
+		throw - 13;
+	}
+	fscanf(file,"%i",&live);
+	fscanf(file, "%i", &kD);
+	fscanf(file, "%i", &type);
+	fclose(file);
+}
 void Hero::setColor(sf::Color c)
 
 {
