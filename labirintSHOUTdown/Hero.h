@@ -10,23 +10,24 @@ enum {
    RIGHT
 };
 class Hero :public sf::Drawable{
-	int live = 100;
-	float dir;
-	int id;
-	sf::Vector2f pos;
-	ShapeType type;
+	int live = 100;//zizny
+	float dir;//napravlenya
+	int id;//porydkovi nomer
+	sf::Vector2f pos;//positia
+	ShapeType type; //type formi
 	int kD;
 	sf::Color color;
 	Gun* gun;
 	Map* map;
+	void download(const char* path);
 public:
-	void setMap(Map* map);
-	Hero(int d);
-	void shoot();
-	void setColor(sf::Color c);
-	void reload();
-	void kick();
-	virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;
-	void move();
+	void setMap(Map* map);//ustanavlivaet ukazatel map
+	Hero(int d,Map* map,const char* path);//konstrucktor
+	void shoot();//ctreliet
+	void setColor(sf::Color c);//ustanavlyvaet chvet geroya
+	void reload();//perezarezaut
+	void kick();//biet
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;//resuet geroya
+	void move();//dvigaetcya
 };
 

@@ -1,8 +1,10 @@
 #include "Hero.h"
 
-Hero::Hero(int d) {
+Hero::Hero(int d,Map* map,const char* path) {
+	
 	dir = UP;
 	id = d;
+	this->map = map;
 	pos = map->getSpawns()[id];
 }
 
@@ -18,13 +20,13 @@ void Hero::setMap(Map* map){
 
 void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	if (type == ShapeType::Circle) {
-		sf::CircleShape circle(map->getLen());
+		sf::CircleShape circle(map->getLen()*0.488);
 		circle.setPosition(sf::Vector2f(pos.x * map->getLen(), pos.y * map->getLen()));
 		circle.setFillColor(color);
 		target.draw(circle);
 	}
 	if (type == ShapeType::Triangle) {
-		sf::CircleShape triangle(map->getLen(),3);
+		sf::CircleShape triangle(map->getLen()*0.488,3);
 		triangle.setPosition(sf::Vector2f(pos.x * map->getLen(), pos.y * map->getLen()));
 		triangle.setFillColor(color);
 		target.draw(triangle);

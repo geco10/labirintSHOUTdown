@@ -10,17 +10,17 @@
 #include<SFML/Graphics.hpp>
 class Map :public sf::Drawable
 {
-	float len;
-	char map[500][500];
-	std::vector<sf::Vector2f> spawns;
-	size_t n=0, m=0;
-	void download(const char* path);
-	void findSpawns();
+	float len;//mashtab
+	char map[500][500];//karta
+	std::vector<sf::Vector2f> spawns;//spavny
+	size_t n=0, m=0; //razmernost karti
+	void download(const char* path);//zagruzaet kartu
+	void findSpawns();//naxodyt cpavni
 public:
-	const std::vector<sf::Vector2f>& getSpawns();
-	float getLen()const;
-	sf::Vector2f getSize(); 
-	Map(const char* path,sf::Vector2f size);
-	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	const std::vector<sf::Vector2f>& getSpawns();//vozvrashaet spavni
+	float getLen()const;//vozvroshaet mashtab
+	sf::Vector2f getSize();// vozvroshaet razmer
+	Map(const char* path,sf::Vector2f size);//konstruktor
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;//risuet kartu
 };
 
