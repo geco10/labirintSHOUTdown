@@ -15,6 +15,7 @@ Map::Map(const char* path, sf::Vector2f size){
 	float kx = size.x / m;
 	if (ky > kx)len = kx;
 	else len = ky;
+	findSpawns();
 }
 void Map::findSpawns() {
 	for (int i = 0; i < n; i++) {
