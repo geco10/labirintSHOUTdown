@@ -20,10 +20,10 @@ Map::Map(const char* path, sf::Vector2f size){
 void Map::findSpawns() {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++){
-			if(map[i][j] == '@'){
-				spawns.push_back(sf::Vector2f(i,j));
+			if (map[i][j] == '@') {
+				spawns.push_back(sf::Vector2f(j, i));
+				map[i][j] = ' ';
 			}
-			map[i][j] = ' ';
 		}
 	}
 }

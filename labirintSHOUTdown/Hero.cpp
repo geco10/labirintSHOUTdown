@@ -7,6 +7,7 @@ Hero::Hero(int d) {
 }
 
 void Hero::setColor(sf::Color c)
+
 {
 	color = c;
 }
