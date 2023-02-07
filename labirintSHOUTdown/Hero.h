@@ -20,7 +20,9 @@ class Hero :public sf::Drawable{
 	sf::Color color;
 	Gun* gun;
 	Map* map;
+	sf::Shape* shape;
 	void download(const char* path);
+	void initShape();
 public:
 	void setMap(Map* map);//ustanavlivaet ukazatel map
 	Hero(Map* map,const char* path);//konstrucktor
