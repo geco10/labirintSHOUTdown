@@ -5,8 +5,10 @@ int main()
 {
 	sf::Vector2f size(900, 900);
 	Map map("./Maps/Test_Map.txt", size);
-	Hero hero(0,&map,"/Hero/triangle.txt");
+	Hero hero(&map,"./Hero/triangle.txt");
 	hero.setColor(sf::Color::Blue);
+	Hero hero2(&map,"./Hero/circle.txt");
+	hero2.setColor(sf::Color::Green);
 	sf::RenderWindow window(sf::VideoMode(size.x,size.y), "Lesson 2. kychka-pc.ru");
 	
 
@@ -22,6 +24,7 @@ int main()
 		window.clear();
 		window.draw(map);
 		window.draw(hero);
+		window.draw(hero2);
 		window.display();
 	}
 

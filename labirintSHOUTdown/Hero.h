@@ -10,6 +10,7 @@ enum {
    RIGHT
 };
 class Hero :public sf::Drawable{
+	float radius = 0.43;
 	int live;//zizny
 	float dir;//napravlenya
 	int id;//porydkovi nomer
@@ -22,7 +23,7 @@ class Hero :public sf::Drawable{
 	void download(const char* path);
 public:
 	void setMap(Map* map);//ustanavlivaet ukazatel map
-	Hero(int d,Map* map,const char* path);//konstrucktor
+	Hero(Map* map,const char* path);//konstrucktor
 	void shoot();//ctreliet
 	void setColor(sf::Color c);//ustanavlyvaet chvet geroya
 	void reload();//perezarezaut

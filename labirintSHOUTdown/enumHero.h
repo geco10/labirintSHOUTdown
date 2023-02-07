@@ -1,5 +1,5 @@
 #pragma once
-enum class ShapeType{
+enum  ShapeType{
   Circle,
   Square,
   Triangle,
