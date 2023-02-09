@@ -50,3 +50,7 @@ void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	shape->setFillColor(color);
 	target.draw(*shape);
 }
+
+void Hero::move(){
+
+}

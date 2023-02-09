@@ -10,7 +10,7 @@ enum {
    RIGHT
 };
 class Hero :public sf::Drawable{
-	float radius = 0.43;
+	float radius = 0.43;//radius
 	int live;//zizny
 	float dir;//napravlenya
 	int id;//porydkovi nomer
