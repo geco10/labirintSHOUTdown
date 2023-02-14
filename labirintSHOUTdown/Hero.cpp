@@ -3,7 +3,7 @@
  static size_t last_id=0;
 Hero::Hero(Map* map,const char* path) {
 	download(path);
-	dir = UP;
+	dir = 0;
 	
 	id = last_id++;
 	this->map = map;
@@ -51,6 +51,6 @@ void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	target.draw(*shape);
 }
 
-void Hero::move(){
-
+void Hero::move(HeroAction event){
+	printf("%i move", id);
 }

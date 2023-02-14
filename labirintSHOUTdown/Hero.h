@@ -3,12 +3,8 @@
 #include "Map.h"
 #include<SFML/Graphics.hpp>
 #include"enumHero.h"
-enum {
-   UP,
-   LEFT,
-   DOWN,
-   RIGHT
-};
+#include"EnumAction.h"
+
 class Hero :public sf::Drawable{
 	float radius = 0.43;//radius
 	int live;//zizny
@@ -31,6 +27,6 @@ public:
 	void reload();//perezarezaut
 	void kick();//biet
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;//resuet geroya
-	void move();//dvigaetcya
+	void move(HeroAction event);//dvigaetcya
 };
 

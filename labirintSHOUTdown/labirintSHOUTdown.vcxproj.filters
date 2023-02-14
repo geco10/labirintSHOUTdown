@@ -62,5 +62,11 @@
     <ClInclude Include="ControlHero.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ActionInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

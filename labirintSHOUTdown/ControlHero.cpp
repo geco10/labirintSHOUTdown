@@ -1,5 +1,33 @@
 #include "ControlHero.h"
+#include"ActionInfo.h"
+#include<map>
+static std::map< sf::Keyboard::Key, ActionInfo> keyMap= {
+    {
+      sf::Keyboard::Up,{0,HeroAction::MOVE_UP}
+    },
+    {
+      sf::Keyboard::Left,{0,HeroAction::MOVE_LEFT}
+    },
+    {
+      sf::Keyboard::Down,{0,HeroAction::MOVE_DOWN}
+    },
+    {
+      sf::Keyboard::Right,{0,HeroAction::MOVE_RIGHT}
+    },
 
+    {
+      sf::Keyboard::W,{1,HeroAction::MOVE_UP}
+    },
+    {
+      sf::Keyboard::A,{1,HeroAction::MOVE_LEFT}
+    },
+    {
+      sf::Keyboard::S,{1,HeroAction::MOVE_DOWN}
+    },
+    {
+      sf::Keyboard::D,{1,HeroAction::MOVE_RIGHT}
+    },
+};
 Hero* ControlHero::createHero(const char* path){
     heros.push_back(new Hero(map,path));
     heros[heros.size()-1]->setColor(color[heros.size() - 1]);
@@ -26,4 +54,11 @@ void ControlHero::initColor(){
 ControlHero::ControlHero(Map* map) {
     this->map = map;
     initColor();
+}
+
+void ControlHero::keyPressed(sf::Keyboard::Key key){
+    if (keyMap.contains(key)) {
+        ActionInfo event = keyMap[key];
+        heros[event.id]->move(event.event);
+    }
 }

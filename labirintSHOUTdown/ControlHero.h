@@ -10,6 +10,7 @@ class ControlHero :public sf::Drawable {
 	void initColor();
 public:
 	ControlHero(Map* map);//konstruktor
+	void keyPressed(sf::Keyboard::Key key);
 	Hero* createHero(const char*path);//sozdaet geroev
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;//rysuet
 	~ControlHero();
