@@ -14,6 +14,10 @@ static std::map< sf::Keyboard::Key, ActionInfo> keyMap= {
     {
       sf::Keyboard::Right,{0,HeroAction::MOVE_RIGHT}
     },
+    {
+      sf::Keyboard::Numpad5,{0,HeroAction::SHOOT}
+    },
+
 
     {
       sf::Keyboard::W,{1,HeroAction::MOVE_UP}
@@ -26,6 +30,9 @@ static std::map< sf::Keyboard::Key, ActionInfo> keyMap= {
     },
     {
       sf::Keyboard::D,{1,HeroAction::MOVE_RIGHT}
+    },
+     {
+      sf::Keyboard::V,{1,HeroAction::SHOOT}
     },
 };
 Hero* ControlHero::createHero(const char* path){
@@ -56,9 +63,16 @@ ControlHero::ControlHero(Map* map) {
     initColor();
 }
 
+void ControlHero::tick(float delta)
+{
+    for (int i = 0; i < heros.size(); i++){
+        heros[i]->tick(delta);
+    }
+}
+
 void ControlHero::keyPressed(sf::Keyboard::Key key){
     if (keyMap.contains(key)) {
         ActionInfo event = keyMap[key];
-        heros[event.id]->move(event.event);
+        heros[event.id]->addAction(event.event);
     }
 }

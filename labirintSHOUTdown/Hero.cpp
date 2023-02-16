@@ -12,6 +12,14 @@ Hero::Hero(Map* map,const char* path) {
 	pos.y += (1 - radius * 2) / 2;
 	initShape();
 }
+void Hero::performMoveAction(float delta)
+{
+	printf("%i move",id);
+}
+void Hero::performDoAction(float delta)
+{
+	printf("%i do", id);
+}
 void Hero::download(const char* path){
 	FILE* file;
 	file=fopen(path,"r");
@@ -45,12 +53,24 @@ void Hero::setMap(Map* map){
 	this->map = map;
 }
 
+void Hero::tick(float delta)
+{
+	performMoveAction(delta);
+	performDoAction(delta);
+	moveAction.clear();
+	doAction.clear();
+}
+
 void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	shape->setPosition(sf::Vector2f(pos.x * map->getLen(), pos.y * map->getLen()));
 	shape->setFillColor(color);
 	target.draw(*shape);
 }
 
-void Hero::move(HeroAction event){
-	printf("%i move", id);
+void Hero::addAction(HeroAction event){
+	if (event >= HeroAction::MOVE_UP && event <= HeroAction::MOVE_RIGHT) {
+		moveAction.push_back(event);
+	}
+	else
+		doAction.push_back(event);
 }

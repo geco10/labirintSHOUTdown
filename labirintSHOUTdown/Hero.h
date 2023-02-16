@@ -1,5 +1,6 @@
 #pragma once
 #include"Gun.h"
+#include<vector>
 #include "Map.h"
 #include<SFML/Graphics.hpp>
 #include"enumHero.h"
@@ -17,6 +18,10 @@ class Hero :public sf::Drawable{
 	Gun* gun;
 	Map* map;
 	sf::Shape* shape;
+	std::vector<HeroAction> moveAction;
+	std::vector<HeroAction> doAction;
+	void performMoveAction(float delta);
+	void performDoAction(float delta);
 	void download(const char* path);
 	void initShape();
 public:
@@ -26,7 +31,8 @@ public:
 	void setColor(sf::Color c);//ustanavlyvaet chvet geroya
 	void reload();//perezarezaut
 	void kick();//biet
+	void tick(float delta);
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;//resuet geroya
-	void move(HeroAction event);//dvigaetcya
+	void addAction(HeroAction event);//dvigaetcya
 };
 
