@@ -70,9 +70,9 @@ void ControlHero::tick(float delta)
     }
 }
 
-void ControlHero::keyPressed(sf::Keyboard::Key key){
+void ControlHero::keyPressed(sf::Keyboard::Key key, bool isPressed){
     if (keyMap.contains(key)) {
         ActionInfo event = keyMap[key];
-        heros[event.id]->addAction(event.event);
+        heros[event.id]->addAction(event.event,isPressed);
     }
 }

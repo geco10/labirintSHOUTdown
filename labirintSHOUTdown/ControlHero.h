@@ -11,7 +11,7 @@ class ControlHero :public sf::Drawable {
 public:
 	ControlHero(Map* map);//konstruktor
 	void tick(float delta);
-	void keyPressed(sf::Keyboard::Key key);
+	void keyPressed(sf::Keyboard::Key key,bool isPressed=true);
 	Hero* createHero(const char*path);//sozdaet geroev
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;//rysuet
 	~ControlHero();

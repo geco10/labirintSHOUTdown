@@ -4,7 +4,7 @@
 Hero::Hero(Map* map,const char* path) {
 	download(path);
 	dir = 0;
-	
+	float speed;
 	id = last_id++;
 	this->map = map;
 	pos = map->getSpawns()[id];
@@ -14,7 +14,14 @@ Hero::Hero(Map* map,const char* path) {
 }
 void Hero::performMoveAction(float delta)
 {
-	printf("%i move",id);
+	sf::Vector2f step = {0,0};
+	step.x += keyPressed[HeroAction::MOVE_RIGHT];
+	step.x -= keyPressed[HeroAction::MOVE_LEFT];
+
+	step.y -= keyPressed[HeroAction::MOVE_UP];
+	step.y +h= keyPressed[HeroAction::MOVE_DOWN];
+	pos.x += step.x/50.0;
+	pos.y += step.y / 50.0;
 }
 void Hero::performDoAction(float delta)
 {
@@ -57,7 +64,6 @@ void Hero::tick(float delta)
 {
 	performMoveAction(delta);
 	performDoAction(delta);
-	moveAction.clear();
 	doAction.clear();
 }
 
@@ -67,9 +73,9 @@ void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	target.draw(*shape);
 }
 
-void Hero::addAction(HeroAction event){
+void Hero::addAction(HeroAction event, bool isPressed){
 	if (event >= HeroAction::MOVE_UP && event <= HeroAction::MOVE_RIGHT) {
-		moveAction.push_back(event);
+		keyPressed[event]=isPressed;
 	}
 	else
 		doAction.push_back(event);

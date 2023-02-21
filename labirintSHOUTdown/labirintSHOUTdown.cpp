@@ -20,7 +20,7 @@ int main()
 	heros.createHero("./Hero/triangle.txt");
 	heros.createHero("./Hero/circle.txt");
 	sf::RenderWindow window(sf::VideoMode(size.x,size.y), "Lesson 2. kychka-pc.ru");
-	
+	window.setKeyRepeatEnabled(false);
 
 	while (window.isOpen())
 	{
@@ -30,6 +30,10 @@ int main()
 			if (event.type == sf::Event::KeyPressed)
 			{
 				heros.keyPressed(event.key.code);
+			}else
+			if (event.type == sf::Event::KeyReleased)
+			{
+				heros.keyPressed(event.key.code,false);
 			}
 			if (event.type == sf::Event::Closed)
 				window.close();
@@ -38,7 +42,7 @@ int main()
 		GetLocalTime(&time1);
 		int delta = toMilliseconds(time1) - toMilliseconds(time);
 		time = time1;
-		heros.tick(delta);
+		heros.tick(delta/1000.f);
 		window.clear();
 		window.draw(map);
 		window.draw(heros);

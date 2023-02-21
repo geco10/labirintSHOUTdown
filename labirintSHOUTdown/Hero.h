@@ -14,11 +14,12 @@ class Hero :public sf::Drawable{
 	sf::Vector2f pos;//positia
 	ShapeType type; //type formi
 	int kD;
+	float speed=0.2;
 	sf::Color color;
 	Gun* gun;
 	Map* map;
 	sf::Shape* shape;
-	std::vector<HeroAction> moveAction;
+	std::map<HeroAction,bool> keyPressed;
 	std::vector<HeroAction> doAction;
 	void performMoveAction(float delta);
 	void performDoAction(float delta);
@@ -33,6 +34,6 @@ public:
 	void kick();//biet
 	void tick(float delta);
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;//resuet geroya
-	void addAction(HeroAction event);//dvigaetcya
+	void addAction(HeroAction event, bool isPressed=true);//dvigaetcya
 };
 
