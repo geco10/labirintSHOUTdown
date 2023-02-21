@@ -28,6 +28,7 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
+		
 		heros.tick(1);
 		window.clear();
 		window.draw(map);
