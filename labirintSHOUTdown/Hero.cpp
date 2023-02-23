@@ -1,10 +1,10 @@
 #include "Hero.h"
+#include"VectorFunctions.h"
 #pragma warning(disable:4996)
  static size_t last_id=0;
 Hero::Hero(Map* map,const char* path) {
 	download(path);
 	dir = 0;
-	float speed;
 	id = last_id++;
 	this->map = map;
 	pos = map->getSpawns()[id];
@@ -14,18 +14,21 @@ Hero::Hero(Map* map,const char* path) {
 }
 void Hero::performMoveAction(float delta)
 {
-	sf::Vector2f step = {0,0};
+	float dis = delta*speed;
+	sf::Vector2f step = { 0,0 };
 	step.x += keyPressed[HeroAction::MOVE_RIGHT];
 	step.x -= keyPressed[HeroAction::MOVE_LEFT];
 
 	step.y -= keyPressed[HeroAction::MOVE_UP];
-	step.y +h= keyPressed[HeroAction::MOVE_DOWN];
-	pos.x += step.x/50.0;
-	pos.y += step.y / 50.0;
+	step.y += keyPressed[HeroAction::MOVE_DOWN];
+	step=vec::normalize(step);
+	step.x *= dis;
+	step.y *= dis;
+	pos += step;
 }
 void Hero::performDoAction(float delta)
 {
-	printf("%i do", id);
+	//printf("%i do", id);
 }
 void Hero::download(const char* path){
 	FILE* file;
@@ -36,6 +39,8 @@ void Hero::download(const char* path){
 	fscanf(file,"%i",&live);
 	fscanf(file,"%i",&kD);
 	fscanf(file,"%i",&type);
+	fscanf(file, "%f", &speed);
+
 	fclose(file);
 }
 void Hero::initShape()

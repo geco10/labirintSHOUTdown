@@ -36,8 +36,11 @@ void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
 				wall.setPosition(sf::Vector2f(x * len, y * len));
 				target.draw(wall);
 			}
-			if (map[y][x] == '@') {
-
+			if (map[y][x] == ' ') {
+				sf::RectangleShape squere(sf::Vector2f(len, len));
+				squere.setFillColor(sf::Color(179, 173, 173));
+				squere.setPosition(sf::Vector2f(x * len, y * len));
+				target.draw(squere);
 			}
 			if (map[y][x] == '|') {
 				/*sf::RectangleShape door(sf::Vector2f(len,4/len));

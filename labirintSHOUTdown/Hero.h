@@ -14,7 +14,7 @@ class Hero :public sf::Drawable{
 	sf::Vector2f pos;//positia
 	ShapeType type; //type formi
 	int kD;
-	float speed=0.2;
+	float speed=0.5;
 	sf::Color color;
 	Gun* gun;
 	Map* map;
