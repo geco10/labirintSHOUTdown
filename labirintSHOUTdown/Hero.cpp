@@ -76,6 +76,8 @@ void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	shape->setPosition(sf::Vector2f(pos.x * map->getLen(), pos.y * map->getLen()));
 	shape->setFillColor(color);
 	target.draw(*shape);
+	gun->draw(target, states);
+
 }
 
 void Hero::addAction(HeroAction event, bool isPressed){
