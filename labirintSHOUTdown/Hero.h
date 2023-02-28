@@ -1,5 +1,6 @@
 #pragma once
 #include"Gun.h"
+#include"Pistol.h"
 #include<vector>
 #include "Map.h"
 #include<SFML/Graphics.hpp>
@@ -33,6 +34,7 @@ public:
 	void reload();//perezarezaut
 	void kick();//biet
 	void tick(float delta);
+	~Hero();
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;//resuet geroya
 	void addAction(HeroAction event, bool isPressed=true);//dvigaetcya
 };

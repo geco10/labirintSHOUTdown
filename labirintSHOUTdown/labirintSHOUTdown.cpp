@@ -12,10 +12,6 @@ int main()
 	GetLocalTime(&time);
 	sf::Vector2f size(900, 900);
 	Map map("./Maps/Test_Map.txt", size);
-	/*Hero hero(&map,"./Hero/triangle.txt");
-	hero.setColor(sf::Color::Blue);
-	Hero hero2(&map,"./Hero/circle.txt");
-	hero2.setColor(sf::Color::Green);*/
 	ControlHero heros(&map);
 	heros.createHero("./Hero/triangle.txt");
 	heros.createHero("./Hero/circle.txt");

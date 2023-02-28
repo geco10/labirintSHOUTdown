@@ -19,6 +19,7 @@ class Map :public sf::Drawable
 public:
 	const std::vector<sf::Vector2f>& getSpawns();//vozvrashaet spavni
 	float getLen()const;//vozvroshaet mashtab
+	const float* getLenPointer()const;
 	sf::Vector2f getSize();// vozvroshaet razmer
 	Map(const char* path,sf::Vector2f size);//konstruktor
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;//risuet kartu

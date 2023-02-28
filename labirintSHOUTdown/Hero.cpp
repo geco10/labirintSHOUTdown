@@ -31,6 +31,7 @@ void Hero::performDoAction(float delta)
 	//printf("%i do", id);
 }
 void Hero::download(const char* path){
+	gun = new Pistol(&pos,map->getLenPointer());
 	FILE* file;
 	file=fopen(path,"r");
 	if (file == NULL) {
@@ -76,8 +77,12 @@ void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	shape->setPosition(sf::Vector2f(pos.x * map->getLen(), pos.y * map->getLen()));
 	shape->setFillColor(color);
 	target.draw(*shape);
-	gun->draw(target, states);
+    target.draw(*gun);
 
+}
+
+Hero::~Hero() {
+	delete gun;
 }
 
 void Hero::addAction(HeroAction event, bool isPressed){

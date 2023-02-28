@@ -51,6 +51,9 @@ void Map:: draw(sf::RenderTarget& target, sf::RenderStates states)const {
 		}
 	}
 }
+const float* Map::getLenPointer()const {
+	return &len;
+}
 const std::vector<sf::Vector2f>& Map::getSpawns() {
 	return spawns;
 }
