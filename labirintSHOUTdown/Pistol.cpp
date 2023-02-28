@@ -1,6 +1,6 @@
 #include "Pistol.h"
 
-Pistol::Pistol(sf::Vector2f* pos,const float *len) :Gun(pos,len)
+Pistol::Pistol(const sf::Vector2f* pos,const float *len) :Gun(pos,len)
 {
 	
 }
