@@ -1,6 +1,6 @@
 #include "Pistol.h"
 
-Pistol::Pistol(const sf::Vector2f* pos,const float *len) :Gun(pos,len)
+Pistol::Pistol(const sf::Vector2f* pos,const float *len,const float *dir) :Gun(pos,len,dir)
 {
 	
 }
@@ -13,11 +13,12 @@ void Pistol::shoot()
 {
 }
 
-void Pistol::draw(sf::RenderTarget& target, sf::RenderStates states,float dir) const
+void Pistol::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	sf::RectangleShape gun(sf::Vector2f(3, 10));
+	sf::Vector2f center = sf::Vector2f(pos->x + 0.43, pos->y + 0.43);
+	sf::RectangleShape gun(sf::Vector2f(3, -10));
 	gun.setFillColor(sf::Color::Black);
-	gun.setPosition(sf::Vector2f(pos->x*(*len),pos->y*( * len)));
-	gun.setRotation(dir);
+	gun.setPosition(sf::Vector2f((*len)*center.x-4,( * len)*center.y-5));
+	gun.setRotation(*dir);
 	target.draw(gun);
 }

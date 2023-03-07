@@ -33,7 +33,7 @@ void Hero::performDoAction(float delta)
 	//printf("%i do", id);
 }
 void Hero::download(const char* path){
-	gun = new Pistol(&pos,map->getLenPointer());
+	gun = new Pistol(&pos,map->getLenPointer(),&dir);
 	FILE* file;
 	file=fopen(path,"r");
 	if (file == NULL) {
@@ -78,7 +78,6 @@ void Hero::tick(float delta)
 void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	shape->setPosition(sf::Vector2f(pos.x * map->getLen(), pos.y * map->getLen()));
 	shape->setFillColor(color);
-	shape->setRotation(dir);
 	target.draw(*shape);
     target.draw(*gun);
 
@@ -89,7 +88,7 @@ Hero::~Hero() {
 }
 
 void Hero::addAction(HeroAction event, bool isPressed){
-	if (event >= HeroAction::MOVE_UP && event <= HeroAction::MOVE_RIGHT) {
+	if (event >= HeroAction::MOVE_UP && event <= HeroAction::TURN_LEFT) {
 		keyPressed[event]=isPressed;
 	}
 	else

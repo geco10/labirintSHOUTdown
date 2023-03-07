@@ -17,8 +17,14 @@ static std::map< sf::Keyboard::Key, ActionInfo> keyMap= {
     {
       sf::Keyboard::Numpad5,{0,HeroAction::SHOOT}
     },
+    {
+      sf::Keyboard::Numpad4,{0,HeroAction::TURN_LEFT}
+    },
+    {
+      sf::Keyboard::Numpad6,{0,HeroAction::TURN_RIGHT}
+    },
 
-
+    
     {
       sf::Keyboard::W,{1,HeroAction::MOVE_UP}
     },
@@ -31,8 +37,14 @@ static std::map< sf::Keyboard::Key, ActionInfo> keyMap= {
     {
       sf::Keyboard::D,{1,HeroAction::MOVE_RIGHT}
     },
-     {
-      sf::Keyboard::V,{1,HeroAction::SHOOT}
+    {
+      sf::Keyboard::F,{1,HeroAction::SHOOT}
+    },
+    {
+      sf::Keyboard::G,{1,HeroAction::TURN_LEFT}
+    },
+    {
+      sf::Keyboard::H,{1,HeroAction::TURN_RIGHT}
     },
 };
 Hero* ControlHero::createHero(const char* path){
