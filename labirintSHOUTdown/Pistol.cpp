@@ -19,6 +19,7 @@ void Pistol::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	sf::RectangleShape gun(sf::Vector2f(3, -10));
 	gun.setFillColor(sf::Color::Black);
 	gun.setPosition(sf::Vector2f((*len)*center.x-4,( * len)*center.y-5));
+	//gun.setOrigin(center * *len);
 	gun.setRotation(*dir);
 	target.draw(gun);
 }
