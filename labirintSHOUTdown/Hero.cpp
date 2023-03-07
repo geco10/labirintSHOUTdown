@@ -3,10 +3,10 @@
 #pragma warning(disable:4996)
  static size_t last_id=0;
 Hero::Hero(Map* map,const char* path) {
+	this->map = map;
 	download(path);
 	dir = 0;
 	id = last_id++;
-	this->map = map;
 	pos = map->getSpawns()[id];
 	pos.x += (1 - radius * 2) / 2;
 	pos.y += (1 - radius * 2) / 2;
@@ -21,6 +21,8 @@ void Hero::performMoveAction(float delta)
 
 	step.y -= keyPressed[HeroAction::MOVE_UP];
 	step.y += keyPressed[HeroAction::MOVE_DOWN];
+	dir += keyPressed[HeroAction::TURN_LEFT]*2.0;
+	dir -= keyPressed[HeroAction::TURN_RIGHT] * 2.0;
 	step=vec::normalize(step);
 	step.x *= dis;
 	step.y *= dis;
@@ -76,6 +78,7 @@ void Hero::tick(float delta)
 void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	shape->setPosition(sf::Vector2f(pos.x * map->getLen(), pos.y * map->getLen()));
 	shape->setFillColor(color);
+	shape->setRotation(dir);
 	target.draw(*shape);
     target.draw(*gun);
 

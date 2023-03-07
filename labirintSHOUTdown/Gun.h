@@ -10,7 +10,7 @@ protected:
   const float* len;
  public:
   Gun(const sf::Vector2f *pos,const float *len);
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const = 0;
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states,float dir)const = 0;
   virtual void reload() = 0;
   virtual void shoot() = 0;
 };
