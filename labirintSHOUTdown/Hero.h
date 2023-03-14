@@ -1,18 +1,17 @@
 #pragma once
 #include"Gun.h"
 #include"Pistol.h"
+#include"CircleColison.h"
 #include<vector>
 #include "Map.h"
 #include<SFML/Graphics.hpp>
 #include"enumHero.h"
 #include"EnumAction.h"
 
-class Hero :public sf::Drawable{
-	float radius = 0.43;//radius
+class Hero :public sf::Drawable,public CircleColison{
 	int live;//zizny
 	float dir;//napravlenya
 	int id;//porydkovi nomer
-	sf::Vector2f pos;//positia
 	ShapeType type; //type formi
 	int kD;
 	float speed=0.5;

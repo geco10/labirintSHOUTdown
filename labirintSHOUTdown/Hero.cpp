@@ -4,6 +4,7 @@
  static size_t last_id=0;
 Hero::Hero(Map* map,const char* path) {
 	this->map = map;
+	radius = 0.43;
 	download(path);
 	dir = 0;
 	id = last_id++;
