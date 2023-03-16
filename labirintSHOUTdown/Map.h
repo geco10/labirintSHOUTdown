@@ -17,6 +17,7 @@ class Map :public sf::Drawable
 	void download(const char* path);//zagruzaet kartu
 	void findSpawns();//naxodyt cpavni
 public:
+	char getFrame(sf::Vector2f fpos);
 	const std::vector<sf::Vector2f>& getSpawns();//vozvrashaet spavni
 	float getLen()const;//vozvroshaet mashtab
 	const float* getLenPointer()const;

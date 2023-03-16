@@ -8,11 +8,19 @@ sf::Vector2f vec::xyToLenfi(sf::Vector2f v)
 {
     sf::Vector2f res;
     res.x = sqrt(v.x*v.x + v.y*  v.y);
-    res.y = atan(v.y / v.x);
+    if(res.x!=0)
+      res.y = atan(v.y / v.x);
 
     return res;
 }
+sf::Vector2f vec::pointFrame(sf::Vector2f pos)
+{
+    sf::Vector2f res;
+    res.x = trunc(pos.x);
+    res.y = trunc(pos.y);
 
+    return res;
+}
 sf::Vector2f vec::lenfiToXy(sf::Vector2f lenfi_v)
 {
     sf::Vector2f res;

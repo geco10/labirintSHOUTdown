@@ -27,7 +27,8 @@ void Hero::performMoveAction(float delta)
 	step=vec::normalize(step);
 	step.x *= dis;
 	step.y *= dis;
-	pos += step;
+	if((step.x!=0||step.y!=0)&&WallColison(step)==true)
+	  pos += step;
 }
 void Hero::performDoAction(float delta)
 {

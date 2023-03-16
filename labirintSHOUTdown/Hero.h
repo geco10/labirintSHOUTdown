@@ -17,7 +17,6 @@ class Hero :public sf::Drawable,public CircleColison{
 	float speed=0.5;
 	sf::Color color;
 	Gun* gun;
-	Map* map;
 	sf::Shape* shape;
 	std::map<HeroAction,bool> keyPressed;
 	std::vector<HeroAction> doAction;
