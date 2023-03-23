@@ -7,10 +7,14 @@ float vec::len(sf::Vector2f a)
 sf::Vector2f vec::xyToLenfi(sf::Vector2f v)
 {
     sf::Vector2f res;
-    res.x = sqrt(v.x*v.x + v.y*  v.y);
-    if(res.x!=0)
-      res.y = atan(v.y / v.x);
-
+    res.x = sqrt(v.x * v.x + v.y * v.y);
+    if (res.x == 0) return res;
+    if (v.x == 0)
+        res.y = v.y > 0 ? M_PI_2 : -M_PI_2;
+    else {
+        float t = atan(v.y / v.x);
+        res.y = v.x > 0 ? t : M_PI + t;
+    }
     return res;
 }
 sf::Vector2f vec::pointFrame(sf::Vector2f pos)
