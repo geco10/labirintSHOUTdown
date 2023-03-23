@@ -4,7 +4,7 @@
 #include"VectorFunctions.h"
 bool CircleColison::WallColison(sf::Vector2f step)
 { 
-	sf::Vector2f new_pos = pos + step;
+	sf::Vector2f new_pos = pos + step+sf::Vector2f(radius,radius);
 	float fi = vec::xyToLenfi(step).y;
 	float len = radius;
 	sf::Vector2f a= new_pos + vec::lenfiToXy(sf::Vector2f(len, fi-M_PI_4));
@@ -16,10 +16,9 @@ bool CircleColison::WallColison(sf::Vector2f step)
 	return true;
 }
 CircleColison::CircleColison() {
-	objects.push_back(this);
+	objects.insert(this);
 }
 CircleColison::~CircleColison() {
-	int i = 0;
-	for (; objects[i] != this; i++);
-	objects.erase(objects.begin()+i);
+	objects.erase(this);
 }
+std::set<CircleColison*> CircleColison::objects = {};

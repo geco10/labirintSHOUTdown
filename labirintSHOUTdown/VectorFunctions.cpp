@@ -1,4 +1,5 @@
 #include "VectorFunctions.h"
+#define _USE_MATH_DEFINES
 
 float vec::len(sf::Vector2f a)
 {
