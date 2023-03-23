@@ -58,7 +58,7 @@ const std::vector<sf::Vector2f>& Map::getSpawns() {
 	return spawns;
 }
 char Map::getFrame(sf::Vector2f fpos) {
-	return map[int(fpos.x)][int(fpos.y)];
+	return map[int(fpos.y)][int(fpos.x)];
 }
 void Map::download(const char* path)
 {

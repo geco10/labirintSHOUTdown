@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CircleColison.h" />
+    <ClInclude Include="CollisonControler.h" />
     <ClInclude Include="ControlHero.h" />
     <ClInclude Include="EnumAction.h" />
     <ClInclude Include="enumHero.h" />
