@@ -21,11 +21,4 @@ CircleColison::CircleColison() {
 CircleColison::~CircleColison() {
 	objects.erase(this);
 }
-bool CircleColison::objectColison(sf::Vector2f step){
-	sf::Vector2f new_pos = pos + step + sf::Vector2f(radius, radius);
-	for  (CircleColison* x : objects){
-		if (x == this) continue;
-
-	}
-}
 std::set<CircleColison*> CircleColison::objects = {};

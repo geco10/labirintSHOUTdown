@@ -12,7 +12,7 @@ protected:
 	Map *map;
 public:
 	CircleColison();
-	bool objectColison();
+	bool objectColison(sf::Vector2f step);
 	bool WallColison(sf::Vector2f step);
 	~CircleColison();
 };
