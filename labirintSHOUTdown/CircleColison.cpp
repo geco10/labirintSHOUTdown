@@ -25,7 +25,9 @@ bool CircleColison::objectColison(sf::Vector2f step){
 	sf::Vector2f new_pos = pos + step + sf::Vector2f(radius, radius);
 	for  (CircleColison* x : objects){
 		if (x == this) continue;
-
+		if (x->radius + this->radius >= vec::xyToLenfi((x->pos+sf::Vector2f(radius,radius)) - new_pos).x)
+			return true;//true colison
 	}
+	return false;
 }
 std::set<CircleColison*> CircleColison::objects = {};

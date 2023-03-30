@@ -22,12 +22,12 @@ void Hero::performMoveAction(float delta)
 
 	step.y -= keyPressed[HeroAction::MOVE_UP];
 	step.y += keyPressed[HeroAction::MOVE_DOWN];
-	dir += keyPressed[HeroAction::TURN_LEFT]*2.0;
-	dir -= keyPressed[HeroAction::TURN_RIGHT] * 2.0;
+	dir += keyPressed[HeroAction::TURN_LEFT]*0.5;
+	dir -= keyPressed[HeroAction::TURN_RIGHT] * 0.5;
 	step=vec::normalize(step);
 	step.x *= dis;
 	step.y *= dis;
-	if((step.x!=0||step.y!=0)&&WallColison(step)==true)
+	if((step.x!=0||step.y!=0)&&WallColison(step)==true&&!objectColison(step))
 	  pos += step;
 }
 void Hero::performDoAction(float delta)
