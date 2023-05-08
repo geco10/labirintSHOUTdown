@@ -11,6 +11,7 @@ void Pistol::reload()
 
 void Pistol::shoot()
 {
+	Bullet bullet(*dir,damage,*pos,range,radius);
 }
 
 void Pistol::draw(sf::RenderTarget& target, sf::RenderStates states) const

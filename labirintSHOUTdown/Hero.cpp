@@ -13,6 +13,10 @@ Hero::Hero(Map* map,const char* path) {
 	pos.y += (1 - radius * 2) / 2;
 	initShape();
 }
+void Hero::shoot()
+{
+	gun->shoot();
+}
 void Hero::performMoveAction(float delta)
 {
 	float dis = delta*speed;
@@ -32,7 +36,8 @@ void Hero::performMoveAction(float delta)
 }
 void Hero::performDoAction(float delta)
 {
-	//printf("%i do", id);
+	if(keyPressed[HeroAction::SHOOT])
+		shoot()
 }
 void Hero::download(const char* path){
 	gun = new Pistol(&pos,map->getLenPointer(),&dir);

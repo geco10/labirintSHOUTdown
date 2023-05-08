@@ -1,4 +1,5 @@
 #pragma once
+#include"Bullet.h"
 #include<SFML/Graphics.hpp>
 class Gun :public sf::Drawable {
 protected:
@@ -6,8 +7,10 @@ protected:
   int range;
   const float *dir;
   int mC;
+  int bc;
+  float radius;
   int damage;
-  const sf::Vector2f *pos;
+  const sf::Vector2f *pos;//top left 
   const float* len;
  public:
   Gun(const sf::Vector2f *pos,const float *len,const float *dir);

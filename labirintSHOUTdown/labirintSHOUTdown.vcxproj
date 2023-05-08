@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CircleColison.cpp" />
     <ClCompile Include="ControlHero.cpp" />
     <ClCompile Include="Gun.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="CircleColison.h" />
     <ClInclude Include="CollisonControler.h" />
     <ClInclude Include="ControlHero.h" />
