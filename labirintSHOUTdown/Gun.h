@@ -7,9 +7,11 @@ protected:
   int range;
   const float *dir;
   int mC;
+  float speed;
   int bc;
-  float radius;
+  float bul_radius;
   int damage;
+  bool vis;
   const sf::Vector2f *pos;//top left 
   const float* len;
  public:

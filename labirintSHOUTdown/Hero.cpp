@@ -36,8 +36,8 @@ void Hero::performMoveAction(float delta)
 }
 void Hero::performDoAction(float delta)
 {
-	if(keyPressed[HeroAction::SHOOT])
-		shoot()
+	if (keyPressed[HeroAction::SHOOT])
+		shoot();
 }
 void Hero::download(const char* path){
 	gun = new Pistol(&pos,map->getLenPointer(),&dir);
@@ -79,7 +79,6 @@ void Hero::tick(float delta)
 {
 	performMoveAction(delta);
 	performDoAction(delta);
-	doAction.clear();
 }
 
 void Hero::draw(sf::RenderTarget& target, sf::RenderStates states) const{
@@ -95,9 +94,5 @@ Hero::~Hero() {
 }
 
 void Hero::addAction(HeroAction event, bool isPressed){
-	if (event >= HeroAction::MOVE_UP && event <= HeroAction::TURN_LEFT) {
-		keyPressed[event]=isPressed;
-	}
-	else
-		doAction.push_back(event);
+	keyPressed[event]=isPressed;
 }

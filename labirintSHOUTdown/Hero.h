@@ -19,7 +19,6 @@ class Hero :public sf::Drawable,public CircleColison{
 	Gun* gun;
 	sf::Shape* shape;
 	std::map<HeroAction,bool> keyPressed;
-	std::vector<HeroAction> doAction;
 	void performMoveAction(float delta);
 	void performDoAction(float delta);
 	void download(const char* path);
