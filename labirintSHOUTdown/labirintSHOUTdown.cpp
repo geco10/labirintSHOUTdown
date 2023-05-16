@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include"Map.h"
+#include"Tickable.h"
 #include"Hero.h"
 #include"ControlHero.h"
 #include<Windows.h>
@@ -38,6 +39,7 @@ int main()
 		GetLocalTime(&time1);
 		int delta = toMilliseconds(time1) - toMilliseconds(time);
 		time = time1;
+		Tickable::super_tick(delta / 1000.f);
 		heros.tick(delta/1000.f);
 		window.clear();
 		window.draw(map);

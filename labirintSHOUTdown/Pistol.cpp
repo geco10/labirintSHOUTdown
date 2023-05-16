@@ -2,7 +2,7 @@
 
 Pistol::Pistol(const sf::Vector2f* pos,const float *len,const float *dir) :Gun(pos,len,dir)
 {
-	vis = false;
+	vis = true;
 	this->len = len;
 	mC = 10;
 	speed = 5;
@@ -20,7 +20,7 @@ void Pistol::reload()
 
 void Pistol::shoot()
 {
-	Bullet bullet(speed,*dir,damage,*pos,range,bul_radius,vis);
+	bul=new Bullet(speed,*dir,damage,*pos,range,bul_radius,vis);
 	--bc;
 }
 
@@ -33,4 +33,6 @@ void Pistol::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	gun.setOrigin(2, 5);
 	gun.setRotation(*dir);
 	target.draw(gun);
+	if(bul!=nullptr)
+	  target.draw(*bul);
 }

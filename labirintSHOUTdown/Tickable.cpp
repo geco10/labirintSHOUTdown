@@ -12,3 +12,4 @@ void Tickable::super_tick(float delta) {
 		cur->tick(delta);
 	}
 }
+std::set<Tickable*> Tickable :: objects = {};

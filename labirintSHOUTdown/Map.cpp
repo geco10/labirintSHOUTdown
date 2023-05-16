@@ -1,7 +1,7 @@
 #pragma warning(disable:4996)
 #include "Map.h"
 #include<SFML/Graphics.hpp>
-float Map::getLen()const
+float Map::getLen()
 {
 	return len;
 }
@@ -73,3 +73,4 @@ void Map::download(const char* path)
 	fclose(file);
 
 }
+float Map::len =0;

@@ -1,6 +1,7 @@
 #pragma once
 #include<SFML/Graphics.hpp>
-class Bullet :public sf::Drawable{
+#include"Tickable.h"
+class Bullet :public sf::Drawable,public Tickable{
     int dir;
 	sf::Vector2f pos;
 	bool vis;
@@ -8,7 +9,10 @@ class Bullet :public sf::Drawable{
 	float speed;
 	int range;
 	float radius;
-	Bullet(const int* dir, int damage,float speed,const sf::Vector2f* pos, int range, int bul_radius, bool vis);
+	virtual void tick(float delta)override;
+	void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
 	void move(float delta);
+public:
+	Bullet(float speed, int dir, int damage, sf::Vector2f pos, int range, float bul_radius, bool vis);
 };
 
