@@ -40,8 +40,8 @@ int main()
 		int delta = toMilliseconds(time1) - toMilliseconds(time);
 		time = time1;
 		Tickable::super_tick(delta / 1000.f);
-		heros.tick(delta/1000.f);
 		window.clear();
+		MyDrawable::super_draw(window);
 		window.draw(map);
 		window.draw(heros);
 		window.display();

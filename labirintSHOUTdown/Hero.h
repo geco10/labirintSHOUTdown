@@ -8,7 +8,7 @@
 #include"enumHero.h"
 #include"EnumAction.h"
 
-class Hero :public sf::Drawable,public CircleColison{
+class Hero :public sf::Drawable,public CircleColison,public Tickable{
 	int live;//zizny
 	float dir;//napravlenya
 	int id;//porydkovi nomer
@@ -30,7 +30,7 @@ public:
 	void setColor(sf::Color c);//ustanavlyvaet chvet geroya
 	void reload();//perezarezaut
 	void kick();//biet
-	void tick(float delta);
+	virtual void tick(float delta)override;
 	~Hero();
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;//resuet geroya
 	void addAction(HeroAction event, bool isPressed=true);//dvigaetcya

@@ -9,7 +9,7 @@ Pistol::Pistol(const sf::Vector2f* pos,const float *len,const float *dir) :Gun(p
 	bul_radius = 1/ *len;//bullet radius
 	bc = mC;
 	this->dir = dir;
-	this->pos = pos;
+	this->pos = pos;//ukazatel na top left conner of hero;
 	damage = 50;
 	range = 15;
 }
@@ -20,8 +20,8 @@ void Pistol::reload()
 
 void Pistol::shoot()
 {
-	bul=new Bullet(speed,*dir,damage,*pos,range,bul_radius,vis);
 	--bc;
+	bul=Bullet::create_bullet(*len, speed, *dir, damage, *pos + sf::Vector2f(0.43, 0.43), range, bul_radius, vis);
 }
 
 void Pistol::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -33,6 +33,4 @@ void Pistol::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	gun.setOrigin(2, 5);
 	gun.setRotation(*dir);
 	target.draw(gun);
-	if(bul!=nullptr)
-	  target.draw(*bul);
 }

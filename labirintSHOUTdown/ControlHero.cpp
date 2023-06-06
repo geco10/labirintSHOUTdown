@@ -77,9 +77,7 @@ ControlHero::ControlHero(Map* map) {
 
 void ControlHero::tick(float delta)
 {
-    for (int i = 0; i < heros.size(); i++){
-        heros[i]->tick(delta);
-    }
+    
 }
 
 void ControlHero::keyPressed(sf::Keyboard::Key key, bool isPressed){

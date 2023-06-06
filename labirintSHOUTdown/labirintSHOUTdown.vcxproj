@@ -137,6 +137,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Pistol.cpp" />
     <ClCompile Include="Shotgun.cpp" />
+    <ClCompile Include="MyDrawable.cpp" />
     <ClCompile Include="Tickable.cpp" />
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="ActionInfo.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MyDrawable.h" />
     <ClInclude Include="Pistol.h" />
     <ClInclude Include="Shotgun.h" />
     <ClInclude Include="Tickable.h" />
