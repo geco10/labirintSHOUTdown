@@ -139,6 +139,7 @@
     <ClCompile Include="Shotgun.cpp" />
     <ClCompile Include="MyDrawable.cpp" />
     <ClCompile Include="Tickable.cpp" />
+    <ClCompile Include="TimeMonitor.cpp" />
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +158,7 @@
     <ClInclude Include="Pistol.h" />
     <ClInclude Include="Shotgun.h" />
     <ClInclude Include="Tickable.h" />
+    <ClInclude Include="TimeMonitor.h" />
     <ClInclude Include="VectorFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
