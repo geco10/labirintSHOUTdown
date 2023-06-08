@@ -42,8 +42,6 @@ int main()
 		Tickable::super_tick(delta / 1000.f);
 		window.clear();
 		MyDrawable::super_draw(window);
-		window.draw(map);
-		window.draw(heros);
 		window.display();
 	}
 

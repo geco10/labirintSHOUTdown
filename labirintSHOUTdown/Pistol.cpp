@@ -20,8 +20,9 @@ void Pistol::reload()
 
 void Pistol::shoot()
 {
+	Bullet::create_bullet(*len, speed, *dir, damage, *pos + sf::Vector2f(0.43, 0.43), range, bul_radius, vis);
 	--bc;
-	bul=Bullet::create_bullet(*len, speed, *dir, damage, *pos + sf::Vector2f(0.43, 0.43), range, bul_radius, vis);
+    
 }
 
 void Pistol::draw(sf::RenderTarget& target, sf::RenderStates states) const

@@ -7,8 +7,9 @@
 * +-armed veichl
 */
 #include<string>
+#include"MyDrawable.h"
 #include<SFML/Graphics.hpp>
-class Map :public sf::Drawable
+class Map :public MyDrawable
 {
 	static float len;//mashtab
 	char map[500][500];//karta

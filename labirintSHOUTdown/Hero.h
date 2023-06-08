@@ -8,7 +8,7 @@
 #include"enumHero.h"
 #include"EnumAction.h"
 
-class Hero :public sf::Drawable,public CircleColison,public Tickable{
+class Hero :public MyDrawable,public CircleColison,public Tickable{
 	int live;//zizny
 	float dir;//napravlenya
 	int id;//porydkovi nomer
