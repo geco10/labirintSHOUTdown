@@ -1,10 +1,10 @@
 #pragma once
 #include<SFML/Graphics.hpp>
 #include"Tickable.h"
+#include"CircleColison.h"
 #include"MyDrawable.h"
-class Bullet :public MyDrawable ,public Tickable{
+class Bullet :public MyDrawable ,public Tickable,public CircleColison{
     float dir;
-	sf::Vector2f pos;
 	bool vis;
 	int damage;
 	float speed;

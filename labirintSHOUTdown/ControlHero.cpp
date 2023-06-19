@@ -18,6 +18,9 @@ static std::map< sf::Keyboard::Key, ActionInfo> keyMap= {
       sf::Keyboard::Numpad5,{0,HeroAction::SHOOT}
     },
     {
+      sf::Keyboard::Numpad9,{0,HeroAction::RELOAD}
+    },
+    {
       sf::Keyboard::Numpad4,{0,HeroAction::TURN_LEFT}
     },
     {
@@ -39,6 +42,9 @@ static std::map< sf::Keyboard::Key, ActionInfo> keyMap= {
     },
     {
       sf::Keyboard::F,{1,HeroAction::SHOOT}
+    },
+     {
+      sf::Keyboard::Y,{1,HeroAction::RELOAD}
     },
     {
       sf::Keyboard::G,{1,HeroAction::TURN_LEFT}

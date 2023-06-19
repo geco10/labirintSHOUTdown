@@ -9,6 +9,7 @@ protected:
   const float *dir;
   int mC;
   TimeMonitor shootMon;
+  TimeMonitor reloadMon;
   float speed;
   int bc;
   float bul_radius;

@@ -7,13 +7,14 @@
 size_t toMilliseconds(SYSTEMTIME time) {
 	return time.wHour * 3600000 + time.wMinute * 60000 + time.wSecond * 1000 + time.wMilliseconds;
 }
+Map* map;
 int main()
 {
 	SYSTEMTIME time;
 	GetLocalTime(&time);
 	sf::Vector2f size(900, 900);
-	Map map("./Maps/Test_Map.txt", size);
-	ControlHero heros(&map);
+	map=new Map("./Maps/Test_Map.txt", size);
+	ControlHero heros(map);
 	heros.createHero("./Hero/triangle.txt");
 	heros.createHero("./Hero/circle.txt");
 	sf::RenderWindow window(sf::VideoMode(size.x,size.y), "Lesson 2. kychka-pc.ru");

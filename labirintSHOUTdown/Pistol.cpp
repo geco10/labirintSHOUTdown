@@ -6,6 +6,7 @@ Pistol::Pistol(const sf::Vector2f* pos,const float *len,const float *dir) :Gun(p
 	this->len = len;
 	mC = 10;
 	shootMon.setTime(0.5);
+	reloadMon.setTime(1.5);
 	speed = 5;
 	bul_radius = 1/ *len;//bullet radius
 	bc = mC;
@@ -17,11 +18,12 @@ Pistol::Pistol(const sf::Vector2f* pos,const float *len,const float *dir) :Gun(p
 void Pistol::reload()
 {
 	bc = mC;
+	reloadMon.restart();
 }
 
 void Pistol::shoot()
 {
-	if (shootMon.isTime() && bc != 0) {
+	if (shootMon.isTime() && reloadMon.isTime()&& bc>0) {
 		Bullet::create_bullet(*len, speed, *dir, damage, *pos + sf::Vector2f(0.43, 0.43), range, bul_radius, vis);
 		--bc;
 		shootMon.restart();

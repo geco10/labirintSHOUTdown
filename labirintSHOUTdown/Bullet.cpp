@@ -1,5 +1,4 @@
 #include "Bullet.h"
-#include"CircleColison.h"
 #include"Vectorfunctions.h"
 Bullet::Bullet(float len,float speed, float dir, int damage, sf::Vector2f pos, int range, float bul_radius, bool vis) {
 	this->dir = (dir-90) / 57.2957795;
@@ -13,7 +12,9 @@ Bullet::Bullet(float len,float speed, float dir, int damage, sf::Vector2f pos, i
 }
 void Bullet::move(float delta) {
 	float step = speed * delta;
-	pos =pos+ vec::lenfiToXy(sf::Vector2f(step,dir));
+	sf::Vector2f a = vec::lenfiToXy(sf::Vector2f(step, dir));
+	if(WallColison(a) == true)
+	  pos =pos+ a;
 }
 Bullet* Bullet::create_bullet(float len, float speed, float dir, int damage, sf::Vector2f pos, int range, float bul_radius, bool vis) {
 	return new Bullet(len,speed,dir,damage, pos, range, bul_radius, vis);

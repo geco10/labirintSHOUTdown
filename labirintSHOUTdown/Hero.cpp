@@ -17,6 +17,10 @@ void Hero::shoot()
 {
 	gun->shoot();
 }
+void Hero::reload()
+{
+	gun->reload();
+}
 void Hero::performMoveAction(float delta)
 {
 	float dis = delta*speed;
@@ -26,8 +30,8 @@ void Hero::performMoveAction(float delta)
 
 	step.y -= keyPressed[HeroAction::MOVE_UP];
 	step.y += keyPressed[HeroAction::MOVE_DOWN];
-	dir += keyPressed[HeroAction::TURN_LEFT]*0.5;
-	dir -= keyPressed[HeroAction::TURN_RIGHT] * 0.5;
+	dir += keyPressed[HeroAction::TURN_LEFT]*0.2;
+	dir -= keyPressed[HeroAction::TURN_RIGHT] * 0.2;
 	step=vec::normalize(step);
 	step.x *= dis;
 	step.y *= dis;
@@ -38,6 +42,8 @@ void Hero::performDoAction(float delta)
 {
 	if (keyPressed[HeroAction::SHOOT])
 		shoot();
+	if (keyPressed[HeroAction::RELOAD])
+		reload();
 }
 void Hero::download(const char* path){
 	gun = new Pistol(&pos,map->getLenPointer(),&dir);
