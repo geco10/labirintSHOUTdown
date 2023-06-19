@@ -14,7 +14,7 @@ int main()
 	GetLocalTime(&time);
 	sf::Vector2f size(900, 900);
 	map=new Map("./Maps/Test_Map.txt", size);
-	ControlHero heros(map);
+	ControlHero heros;
 	heros.createHero("./Hero/triangle.txt");
 	heros.createHero("./Hero/circle.txt");
 	sf::RenderWindow window(sf::VideoMode(size.x,size.y), "Lesson 2. kychka-pc.ru");

@@ -54,7 +54,7 @@ static std::map< sf::Keyboard::Key, ActionInfo> keyMap= {
     },
 };
 Hero* ControlHero::createHero(const char* path){
-    heros.push_back(new Hero(map,path));
+    heros.push_back(new Hero(path));
     heros[heros.size()-1]->setColor(color[heros.size() - 1]);
     return heros[heros.size() - 1];
 }
@@ -76,8 +76,7 @@ void ControlHero::initColor(){
     color[1] = sf::Color::Blue;
     color[2] = sf::Color::Red;
 }
-ControlHero::ControlHero(Map* map) {
-    this->map = map;
+ControlHero::ControlHero() {
     initColor();
 }
 

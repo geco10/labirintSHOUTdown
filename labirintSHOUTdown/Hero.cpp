@@ -2,8 +2,8 @@
 #include"VectorFunctions.h"
 #pragma warning(disable:4996)
  static size_t last_id=0;
-Hero::Hero(Map* map,const char* path) {
-	this->map = map;
+ extern Map* map;
+Hero::Hero(const char* path) {
 	radius = 0.43;
 	download(path);
 	dir = 0;
@@ -77,9 +77,7 @@ void Hero::setColor(sf::Color c)
 	color = c;
 }
 
-void Hero::setMap(Map* map){
-	this->map = map;
-}
+
 
 void Hero::tick(float delta)
 {

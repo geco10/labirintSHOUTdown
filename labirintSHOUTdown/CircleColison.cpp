@@ -2,6 +2,7 @@
 #include "CircleColison.h"
 #include<cmath>
 #include"VectorFunctions.h"
+extern Map* map;
 bool CircleColison::WallColison(sf::Vector2f step)
 { 
 	sf::Vector2f new_pos = pos + step+sf::Vector2f(radius,radius);

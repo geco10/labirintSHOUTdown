@@ -8,7 +8,7 @@ Pistol::Pistol(const sf::Vector2f* pos,const float *len,const float *dir) :Gun(p
 	shootMon.setTime(0.5);
 	reloadMon.setTime(1.5);
 	speed = 5;
-	bul_radius = 1/ *len;//bullet radius
+	bul_radius = 5/ *len;//bullet radius
 	bc = mC;
 	this->dir = dir;
 	this->pos = pos;//ukazatel na top left conner of hero;

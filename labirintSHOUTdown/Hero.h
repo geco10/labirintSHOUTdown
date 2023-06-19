@@ -24,8 +24,7 @@ class Hero :public MyDrawable,public CircleColison,public Tickable{
 	void download(const char* path);
 	void initShape();
 public:
-	void setMap(Map* map);//ustanavlivaet ukazatel map
-	Hero(Map* map,const char* path);//konstrucktor
+	Hero(const char* path);//konstrucktor
 	void shoot();//ctreliet
 	void setColor(sf::Color c);//ustanavlyvaet chvet geroya
 	void reload();//perezarezaut

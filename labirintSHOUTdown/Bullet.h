@@ -10,7 +10,6 @@ class Bullet :public MyDrawable ,public Tickable,public CircleColison{
 	float speed;
 	float len;
 	int range;
-	float radius;
 public:
 	~Bullet();
 	static Bullet* create_bullet(float len, float speed, float dir, int damage, sf::Vector2f pos, int range, float bul_radius, bool vis);

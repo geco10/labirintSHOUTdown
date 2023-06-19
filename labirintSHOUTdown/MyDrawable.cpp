@@ -1,14 +1,16 @@
 #include"MyDrawable.h"
 
 MyDrawable::MyDrawable() {
-	objects.insert(this);
+	objects.push_back(this);
 }
 MyDrawable::~MyDrawable() {
-	objects.erase(this);
+	int i = 0;
+	for (; objects[i] != this; i++);
+	objects.erase(objects.begin() + i);
 }
 void MyDrawable::super_draw(sf::RenderWindow& window) {
 	for (MyDrawable* res : objects) {
 		window.draw(*res);
 	}
 }
-std::set<MyDrawable*> MyDrawable::objects={ };
+std::vector<MyDrawable*> MyDrawable::objects={ };

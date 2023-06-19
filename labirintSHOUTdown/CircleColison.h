@@ -9,7 +9,6 @@ public:
 protected:
 	sf::Vector2f pos;
 	float radius;
-	Map *map;
 public:
 	CircleColison();
 	bool objectColison(sf::Vector2f step);
